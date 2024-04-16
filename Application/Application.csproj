@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Languages\Commands\Create\" />
+    <Folder Include="Features\Languages\Commands\Delete\" />
+    <Folder Include="Features\Languages\Commands\Update\" />
+    <Folder Include="Features\Languages\Queries\GetList\" />
+    <Folder Include="Features\Languages\Queries\GetById\" />
+  </ItemGroup>
+
 </Project>
