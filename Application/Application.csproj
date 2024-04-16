@@ -15,8 +15,13 @@
     <Folder Include="Features\Languages\Commands\Create\" />
     <Folder Include="Features\Languages\Commands\Delete\" />
     <Folder Include="Features\Languages\Commands\Update\" />
+    <Folder Include="Features\Languages\Profiles\" />
     <Folder Include="Features\Languages\Queries\GetList\" />
     <Folder Include="Features\Languages\Queries\GetById\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
 </Project>

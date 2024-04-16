@@ -10,6 +10,8 @@ public static class ApplicationServiceRegistration
        this IServiceCollection services
    )
     {
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
         services.AddScoped<ILanguageService, LanguageManager>();
         return services;
     }
