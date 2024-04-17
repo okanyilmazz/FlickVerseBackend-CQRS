@@ -1,6 +1,8 @@
-﻿namespace Application.Features.Languages.Commands.Create;
+﻿using Core.Application.Responses;
 
-public class CreatedLanguageResponse
+namespace Application.Features.Languages.Commands.Create;
+
+public class CreatedLanguageResponse : IResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
