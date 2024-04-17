@@ -8,6 +8,7 @@ public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {
+        CreateMap<CreateLanguageCommand, Language>().ReverseMap();
         CreateMap<Language, CreatedLanguageResponse>().ReverseMap();
     }
 }

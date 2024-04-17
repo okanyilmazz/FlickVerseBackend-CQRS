@@ -12,7 +12,12 @@ public static class ApplicationServiceRegistration
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-        services.AddScoped<ILanguageService, LanguageManager>();
+        services.AddMediatR(configuration =>
+        {
+            configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
+
+            services.AddScoped<ILanguageService, LanguageManager>();
         return services;
     }
 
