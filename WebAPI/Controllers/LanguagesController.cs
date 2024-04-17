@@ -1,5 +1,6 @@
 ﻿using Application.Features.Languages.Commands.Create;
 using Application.Features.Languages.Commands.Delete;
+using Application.Features.Languages.Commands.Update;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,14 @@ public class LanguagesController : ControllerBase
         DeleteLanguageCommand command = new() { Id = id };
 
         DeletedLanguageResponse response = await mediator.Send(command);
+
+        return Ok(response);
+    }
+
+    [HttpPut]
+    public async Task<ActionResult<UpdatedLanguageResponse>> Update([FromBody] UpdateLanguageCommand command)
+    {
+        UpdatedLanguageResponse response = await mediator.Send(command);
 
         return Ok(response);
     }

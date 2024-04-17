@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Languages\Commands\Update\" />
     <Folder Include="Features\Languages\Queries\GetList\" />
     <Folder Include="Features\Languages\Queries\GetById\" />
   </ItemGroup>

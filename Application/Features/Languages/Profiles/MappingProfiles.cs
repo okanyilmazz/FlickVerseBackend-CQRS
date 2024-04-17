@@ -1,5 +1,6 @@
 ﻿using Application.Features.Languages.Commands.Create;
 using Application.Features.Languages.Commands.Delete;
+using Application.Features.Languages.Commands.Update;
 using AutoMapper;
 using Domain.Entities;
 
@@ -14,5 +15,8 @@ public class MappingProfiles : Profile
 
         CreateMap<DeleteLanguageCommand, Language>().ReverseMap();
         CreateMap<Language, DeletedLanguageResponse>().ReverseMap();
+
+        CreateMap<UpdateLanguageCommand, Language>().ReverseMap();
+        CreateMap<Language, UpdatedLanguageResponse>().ReverseMap();
     }
 }

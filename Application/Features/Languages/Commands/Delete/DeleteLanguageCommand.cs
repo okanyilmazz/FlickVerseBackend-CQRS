@@ -23,7 +23,7 @@ public class DeleteLanguageCommand : IRequest<DeletedLanguageResponse>
 
         public async Task<DeletedLanguageResponse> Handle(DeleteLanguageCommand request, CancellationToken cancellationToken)
         {
-            Language? language = await _languageRepository.GetAsync(predicate: l => l.Id == request.Id);
+            Language? language = await _languageRepository.GetAsync(predicate: l => l.Id == request.Id, cancellationToken: cancellationToken);
 
             await _languageRepository.DeleteAsync(language!);
 
