@@ -1,6 +1,7 @@
 ﻿using Application.Features.Languages.Commands.Create;
 using Application.Features.Languages.Commands.Delete;
 using Application.Features.Languages.Commands.Update;
+using Application.Features.Languages.Queries.GetById;
 using AutoMapper;
 using Domain.Entities;
 
@@ -18,5 +19,8 @@ public class MappingProfiles : Profile
 
         CreateMap<UpdateLanguageCommand, Language>().ReverseMap();
         CreateMap<Language, UpdatedLanguageResponse>().ReverseMap();
+
+        CreateMap<GetByIdLanguageQuery, Language>().ReverseMap();
+        CreateMap<Language, GetByIdLanguageResponse>().ReverseMap();
     }
 }

@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Languages\Queries\GetList\" />
-    <Folder Include="Features\Languages\Queries\GetById\" />
   </ItemGroup>
 
   <ItemGroup>

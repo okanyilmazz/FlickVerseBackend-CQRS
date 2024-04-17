@@ -1,8 +1,8 @@
 ﻿using Core.Application.Responses;
 
-namespace Application.Features.Languages.Commands.Update;
+namespace Application.Features.Languages.Queries.GetById;
 
-public class UpdatedLanguageResponse : IResponse
+public class GetByIdLanguageResponse : IResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

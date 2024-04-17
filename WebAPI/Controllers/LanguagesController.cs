@@ -1,6 +1,7 @@
 ﻿using Application.Features.Languages.Commands.Create;
 using Application.Features.Languages.Commands.Delete;
 using Application.Features.Languages.Commands.Update;
+using Application.Features.Languages.Queries.GetById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -40,6 +41,17 @@ public class LanguagesController : ControllerBase
     public async Task<ActionResult<UpdatedLanguageResponse>> Update([FromBody] UpdateLanguageCommand command)
     {
         UpdatedLanguageResponse response = await mediator.Send(command);
+
+        return Ok(response);
+    }
+
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<GetByIdLanguageResponse>> GetById([FromRoute] Guid id)
+    {
+        GetByIdLanguageQuery query = new() { Id = id };
+
+        GetByIdLanguageResponse response = await mediator.Send(query);
 
         return Ok(response);
     }
