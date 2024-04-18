@@ -2,6 +2,9 @@
 using Application.Features.Languages.Commands.Delete;
 using Application.Features.Languages.Commands.Update;
 using Application.Features.Languages.Queries.GetById;
+using Application.Features.Languages.Queries.GetList;
+using Core.Application.Requests;
+using Core.Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +14,6 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class LanguagesController : ControllerBase
 {
-
     private readonly IMediator mediator;
 
     public LanguagesController(IMediator mediator)
@@ -45,7 +47,6 @@ public class LanguagesController : ControllerBase
         return Ok(response);
     }
 
-
     [HttpGet("{id}")]
     public async Task<ActionResult<GetByIdLanguageResponse>> GetById([FromRoute] Guid id)
     {
@@ -55,5 +56,15 @@ public class LanguagesController : ControllerBase
 
         return Ok(response);
     }
+
+    [HttpGet]
+    public async Task<ActionResult<GetListLanguageListItemDto>> GetList([FromQuery] PageRequest pageRequest)
+    {
+        GetListLanguageQuery query = new() { PageRequest = pageRequest };
+        GetListResponse<GetListLanguageListItemDto> response = await mediator.Send(query);
+
+        return Ok(response);
+    }
+
 
 }

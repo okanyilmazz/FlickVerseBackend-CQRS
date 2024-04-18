@@ -2,7 +2,10 @@
 using Application.Features.Languages.Commands.Delete;
 using Application.Features.Languages.Commands.Update;
 using Application.Features.Languages.Queries.GetById;
+using Application.Features.Languages.Queries.GetList;
 using AutoMapper;
+using Core.Application.Responses;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Languages.Profiles;
@@ -22,5 +25,8 @@ public class MappingProfiles : Profile
 
         CreateMap<GetByIdLanguageQuery, Language>().ReverseMap();
         CreateMap<Language, GetByIdLanguageResponse>().ReverseMap();
+
+        CreateMap<IPaginate<Language>, GetListResponse<GetListLanguageListItemDto>>();
+        CreateMap<Language, GetListLanguageListItemDto>().ReverseMap();
     }
 }
